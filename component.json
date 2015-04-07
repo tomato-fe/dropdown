@@ -4,6 +4,6 @@
   "description": "jq plug dropdown",
   "version": "0.1.0",
   "keywords": ["dropdown", "jq"],
-  "files": ["dropdown.js", "dropdown.css"],
+  "files": ["dropdown.js","dropdown.css"],
   "license": "MIT"
 }
