@@ -6,8 +6,7 @@
   "keywords": ["dropdown", "jq"],
   "main": "dropdown.js",
   "files": [
-    "dropdown.css",
-    "dropdown.js"
+    "dropdown.css"
   ],
   "license": "MIT"
 }
