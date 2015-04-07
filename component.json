@@ -1,0 +1,13 @@
+{
+  "name": "dropdown",
+  "repo": "tomato-fe/dropdown",
+  "description": "jq plug dropdown",
+  "version": "0.1.0",
+  "keywords": ["dropdown", "jq"],
+  "main": "dropdown.js",
+  "files": [
+    "dropdown.css",
+    "dropdown.js"
+  ],
+  "license": "MIT"
+}

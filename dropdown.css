@@ -1,0 +1,107 @@
+/*****************************************************************
+ *
+ * ui-dropdown
+ * 
+ * 下拉框
+ *
+ ****************************************************************/
+.ui-dropdown {
+	position: relative;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.ui-dropdown>a {
+	position: relative;
+	display: block;
+	padding: 0px 25px 0 6px;
+	border: 1px solid #ccc;
+	text-decoration: none;
+}
+
+.ui-dropdown>a:hover {
+	color: #555;;
+}
+
+.disabled>a {
+	cursor: not-allowed;
+	color: #ccc !important;
+}
+
+.ui-dropdown>a>i {
+	position: absolute;
+	top: 0;
+	right: 8px;
+}
+
+.ui-dropdown-list {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	min-width: 99%;
+	margin: -1px 0 0 0px;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+.ui-dropdown-list>a {
+	display: block;
+	position: relative;
+	font-weight: normal;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 6px;
+	white-space: nowrap;
+}
+
+.ui-dropdown-list>a:hover, .ui-dropdown-list>a:focus {
+	color: #fff;
+	background-color: #cf2d01;
+	text-decoration: none;
+}
+
+.ui-dropdown-list>.disabled {
+	cursor: not-allowed;
+	color: #ccc !important;
+}
+
+.open>.ui-dropdown-list {
+	display: block;
+}
+
+/* ui-dropdown-menu 菜单样式 下拉框*/
+.ui-dropdown-menu>a {
+	padding: 0;
+	border: none;
+}
+
+.ui-dropdown-menu>a>i {
+	position: static;
+	top: auto;
+	left: auto;
+}
+
+.ui-dropdown-menu>.ui-dropdown-list {
+	border-bottom: none;
+	border-top: 3px solid #a9221c;
+	border-radius: 5px 5px 0 0;
+}
+
+.ui-dropdown-menu>.ui-dropdown-list>a {
+	padding: 0 16px;
+	border-bottom: 1px solid #d4d9df;
+}
+
+.ui-dropdown-menu>.ui-dropdown-list>a:hover, .ui-dropdown-menu>.ui-dropdown-list>a:focus {
+	color: #a9221c;;
+	background-color: #EFF1F5;
+}
+
+/*  .ui-dropdown-right 下拉菜单右对齐 */
+.ui-dropdown-right>.ui-dropdown-list {
+	left: auto;
+	right: 0;
+}
