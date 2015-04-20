@@ -1,5 +1,5 @@
-'use strict';
 ;!function ($) {
+    'use strict';
     var flag = '[data-ui="dropdown"]';
     var select = '[data-ui="dropdown"] [data-role="item"]';
     
@@ -79,7 +79,8 @@
         var $this = $(this),
             $list = $this.children('.ui-dropdown-list'),
             $item
-
+            
+        index = index === void 0 ? 0 : index
         if (typeof index === 'number') {
             // index
             $item = $list.children('[data-role="item"]').eq(index)
@@ -120,6 +121,7 @@
         var $parent = getParent($item);
         var $roleValue = getRoleValue($parent);
         var prev = $roleValue.data('value') === undefined ? '' : $roleValue.data('value');
+        var $input = $parent.children('[type=hidden]:first')
 
          opt.value = opt.value === undefined ? '' : opt.value
 
@@ -127,10 +129,31 @@
             .html(opt.text)
             .data('value', opt.value)
 
+        if ($input.length) {
+            $input.val(opt.value)
+        }
+
         // change 事件
         if (prev !== opt.value) {
             var relatedTarget = { relatedTarget: this }
             $parent.trigger($.Event('change.tc.dropdown', relatedTarget), [opt.value, prev]);
+
+            if ($input.length) {
+                // 触发原生change事件
+                _fireEvent($input[0], 'change')
+            }
+        }
+    }
+
+    function _fireEvent(target, type) {
+        if (document.createEvent) {
+            var ev = document.createEvent('HTMLEvents');
+            ev.initEvent(type, false, true);  
+            target.dispatchEvent(ev);
+        } else {
+            var eventObj = document.createEventObject();
+            eventObj.target = target
+            target.fireEvent("on"+ type, eventObj);
         }
     }
 
